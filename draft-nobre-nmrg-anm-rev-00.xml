@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!-- This template is for creating an Internet Draft using xml2rfc,
+     which is available here: http://xml.resource.org. -->
+
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+<!-- One method to get references from the online citation libraries.
+     There has to be one entity for each item to be referenced. 
+     An alternate method (rfc include) is described in the references. -->
+
+<!ENTITY RFC4656 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4656.xml">
+<!ENTITY RFC5357 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5357.xml">
+<!ENTITY RFC6812 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.6812.xml">
+<!ENTITY RFC3954 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3954.xml">
+<!ENTITY RFC4148 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.4148.xml">
+<!ENTITY RFC7297 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7297.xml">
+]>
+
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+<!-- used by XSLT processors -->
+<!-- For a complete list and description of processing instructions (PIs), 
+     please see http://xml.resource.org/authoring/README.html. -->
+<!-- Below are generally applicable Processing Instructions (PIs) that most I-Ds might want to use.
+     (Here they are set differently than their defaults in xml2rfc v1.32) -->
+<?rfc strict="yes" ?>
+<!-- give errors regarding ID-nits and DTD validation -->
+<!-- control the table of contents (ToC) -->
+<?rfc toc="yes"?>
+<!-- generate a ToC -->
+<?rfc tocdepth="4"?>
+<!-- the number of levels of subsections in ToC. default: 3 -->
+<!-- control references -->
+<?rfc symrefs="yes"?>
+<!-- use symbolic references tags, i.e, [RFC2119] instead of [1] -->
+<?rfc sortrefs="yes" ?>
+<!-- sort the reference entries alphabetically -->
+<!-- control vertical white space 
+     (using these PIs as follows is recommended by the RFC Editor) -->
+<?rfc compact="yes" ?>
+<!-- do not start each main section on a new page -->
+<?rfc subcompact="no" ?>
+<!-- keep one blank line between list items -->
+<!-- end of list of popular I-D processing instructions -->
+<rfc category="info" docName="draft-nobre-nmrg-anm-rev-00" ipr="trust200902">
+  <!-- category values: std, bcp, info, exp, and historic
+     ipr values: full3667, noModification3667, noDerivatives3667
+     you can add the attributes updates="NNNN" and obsoletes="NNNN" 
+     they will automatically be output with "(if approved)" -->
+
+  <!-- ***** FRONT MATTER ***** -->
+
+  <front>
+    <!-- The abbreviated title is used in the page header - it is only necessary if the 
+         full title is longer than 39 characters -->
+
+    <title abbrev="Revisited Autonomics in Network Management">Revisited Autonomics in Network Management</title>
+
+    <!-- add 'role="editor"' below for the editors if appropriate -->
+
+    <!-- Another author who claims to be an editor -->
+
+		<author fullname="Jeferson Campos Nobre" initials="J.C." surname="Nobre">
+      			<organization>University of Vale do Rio dos Sinos</organization>
+      			<address>
+        			<postal>
+          				<street>Av. Unisinos, 950</street>
+        				<city>São Leopoldo</city>
+			        	<code>91501-970</code>
+        				<country>Brazil</country>
+        			</postal>
+        			<email>jcnobre@unisinos.br</email>
+		      </address>
+   		</author>
+
+
+    <author fullname="Lisandro Zambenedetti Granvile" initials="L.Z." surname="Granville">
+      <organization>Federal University of Rio Grande do Sul</organization>
+
+      <address>
+        <postal>
+          <street></street>
+
+          <!-- Reorder these if your country does things differently -->
+
+          <city>Porto Alegre</city>
+
+          <region></region>
+
+          <code></code>
+
+          <country>Brazil</country>
+        </postal>
+
+        <phone></phone>
+
+        <email>granville@inf.ufrgs.br</email>
+
+        <!-- uri and facsimile elements may also be added -->
+      </address>
+    </author>
+
+		<author	fullname="Laurent Ciavaglia"
+				initials="L."
+				surname="Ciavaglia">
+			<organization>Nokia</organization>
+			<address>
+				<postal>
+					<street>Villarceaux</street>
+					<code>91460</code>
+					<city>Nozay</city>
+					<region/>
+					<country>FR</country>
+				</postal>
+				<email>laurent.ciavaglia@nokia.com</email>
+			</address>
+		</author>
+
+
+
+    <date month="March" year="2018" />
+
+    <!-- If the month and year are both specified and are the current ones, xml2rfc will fill 
+         in the current day for you. If only the current year is specified, xml2rfc will fill 
+	 in the current day and month for you. If the year is not the current one, it is 
+	 necessary to specify at least a month (xml2rfc assumes day="1" if not specified for the 
+	 purpose of calculating the expiry date).  With drafts it is normally sufficient to 
+	 specify just the year. -->
+
+    <!-- Meta-data Declarations -->
+
+    <area>General</area>
+
+    <workgroup>Network Management Research Group</workgroup>
+
+    <!-- WG name at the upperleft corner of the doc,
+         IETF is fine for individual submissions.  
+	 If this element is not present, the default is "Network Working Group",
+         which is used by the RFC Editor as a nod to the history of the IETF. -->
+
+    <keyword>Autonomic Network Management</keyword>
+    
+    <!-- Keywords will be incorporated into HTML output
+         files in a meta tag but they have no effect on text or nroff
+         output. If you submit your draft to the RFC Editor, the
+         keywords will be used for the search engine. -->
+
+    <abstract>
+      <t>.</t>
+    </abstract>
+  </front>
+
+  <middle>
+    <section title="Introduction">
+      <t>The Internet has been growing dramatically in terms of size and capacity, and accessibility in the last years. Communication requirements of distributed services and applications running on top of the Internet have become increasingly demanding. Examples are real-time interactive video or financial trading.  Providing such services involves stringent requirements in terms of acceptable latency, loss, or jitter.  Those requirements lead to the articulation of Service Level Objectives (SLOs) which are to be met.  Those SLOs become part of Service Level Agreements (SLAs) that articulate a contract between the provider and the consumer of a service.  To fulfill a service, it needs to be ensured that the SLOs are met.  Examples of service fulfillment clauses can be found on <xref target="RFC7297" />). Violations of SLOs can be associated with significant financial loss, which can by divided in two types. First, there is the loss incurred by the service users (e.g., the trader whose orders are not executed in a timely manner) and the loss incurred by the service provider in terms of penalties for not meeting the service and loss of revenues due to reduced customer satisfaction. Thus, the service level requirements of critical network services have become a key concern for network administrators. To ensure that SLAs are not being violated, service levels need to be constantly monitored at the network infrastructure layer. To that end, network measurements must take place.</t>
+
+
+	<section title="Definitions and Acronyms">
+	<list style="symbols">
+	</list>
+	</section>
+
+
+    <section title="Problem Statement">
+
+	<t>.</t>
+
+    </section>
+
+    <section title="Benefits of an Autonomic Solution">
+        <t>The use case considered here is the distributed autonomic detection of SLA violations. 
+The use of Autonomic Networking (AN) properties can help such detection through an efficient activation of measurement sessions <xref target="P2PBNM-Nobre-2012" />. The problem to be solved by AN in the present use case is how to steer the process of measurement session activation by a complete solution that sets all necessary parameters for this activation to operate efficiently, reliably and securely, with no required human intervention, while allowing for their input.</t>
+    </section>
+
+    <section title="Related IETF Work">
+	    
+    </section>
+
+    <!-- Possibly a 'Contributors' section ... -->
+
+    <section anchor="IANA" title="IANA Considerations">
+      <t>This memo includes no request to IANA.</t>
+    </section>
+
+    <section anchor="Security" title="Security Considerations">
+      <t>.</t>
+    </section>
+  </middle>
+
+  <!--  *****BACK MATTER ***** -->
+
+  <back>
+    <!-- References split into informative and normative -->
+
+    <!-- There are 2 ways to insert reference entries from the citation libraries:
+     1. define an ENTITY at the top, and use "ampersand character"RFC2629; here (as shown)
+     2. simply use a PI "less than character"?rfc include="reference.RFC.2119.xml"?> here
+        (for I-Ds: include="reference.I-D.narten-iana-considerations-rfc2434bis.xml")
+
+     Both are cited textually in the same manner: by using xref elements.
+     If you use the PI option, xml2rfc will, by default, try to find included files in the same
+     directory as the including file. You can also define the XML_LIBRARY environment variable
+     with a value containing a set of directories to search.  These can be either in the local
+     filing system or remote ones accessed by http (http://domain/dir/... ).-->
+
+    <!--     <references title="Normative References"> -->
+      
+    <!--         </references> -->
+
+<references title="Normative References">
+      <!-- Here we use entities that we defined at the beginning. -->
+
+
+</references>
+
+ <references title="Informative References">
+      <!-- Here we use entities that we defined at the beginning. -->
+
+
+</references>
+
+</back>
+</rfc>
